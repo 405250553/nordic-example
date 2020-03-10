@@ -9,3 +9,7 @@
 * Softdevice S140 v6.1.1
 * Segger Embedded Studio
 * Terminal on the PC (ex: putty)
+
+## compile 
+
+ *需將資料夾 sdk_mod 移動到 project 資料夾所在的目錄下 ，否則nrf_log模組會讀取不到
