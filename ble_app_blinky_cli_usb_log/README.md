@@ -12,4 +12,4 @@
 
 ## compile 
 
- *需將資料夾 sdk_mod 移動到 project 資料夾所在的目錄下 ，否則nrf_log模組會讀取不到
+ * 需將資料夾 sdk_mod 移動到 project 資料夾所在的目錄下 ，否則nrf_log模組會讀取不到
