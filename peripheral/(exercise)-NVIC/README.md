@@ -4,7 +4,7 @@
 
 ## step
  
- ###1. 對要使用的interrupt初始化
+**1. 對要使用的interrupt初始化**
 ```
     NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos) //設定觸發條件是上升沿、下降沿或者任何變化  
                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos) //設定相對應的中斷輸入pin腳
@@ -12,7 +12,7 @@
                             
     NRF_GPIOTE->INTENSET = GPIOTE_INTENSET_IN0_Set << GPIOTE_INTENSET_IN0_Pos //enable相對應的INTENSET register
 ```  
- ###2. 設定中斷的priorityenable要使用的interrupt
+ **2. 設定中斷的priorityenable要使用的interrupt**
  ```
      NVIC_SetPriority(GPIOTE_IRQn,7)
  ```
@@ -37,4 +37,4 @@ typedef struct
   __OM  uint32_t STIR;                   /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Register */
 }  NVIC_Type;
 ```
- ###3. enable要使用的interrupt
+ **3. enable要使用的interrupt**
