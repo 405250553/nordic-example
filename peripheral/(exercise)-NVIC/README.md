@@ -17,7 +17,7 @@
      NVIC_SetPriority(GPIOTE_IRQn,7)
  ```
  
-   在core-m4.h裡定義的NVIC結構如下
+   /t/t在core-m4.h裡定義的NVIC結構如下
  
 ```
 typedef struct
