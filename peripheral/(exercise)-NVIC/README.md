@@ -89,3 +89,7 @@ IP[8]：中斷優先級控制寄存器組。這個寄存器組相當重要。中
 
 NVIC_EnableIRQ() 改變register ISER的值  
 而 NVIC_SetPriority() 便是改register IP的值
+
+**4.中斷處理函數**
+進行完前三步設置之後，就可以編寫相應的中斷處理函數了。  
+中斷處理函數命名是由上面配置的中斷決定的，例如上面配置的中斷是GPIOTE_IRQn，則中斷處理函數的名稱就是GPIOTE_IRQHandler；如果配置的中斷是TIMER1_IRQn，則中斷處理函數的名稱就是TIMER1_IRQHandler。
