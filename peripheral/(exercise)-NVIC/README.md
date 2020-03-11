@@ -6,9 +6,11 @@
  
  1. 對要用到的中斷初始化
 
-    `NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos)  
-                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos)    
+```
+    NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos)  
+                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos)  
                             |(GPIOTE_CONFIG_MODE_Event << GPIOTE_CONFIG_MODE_Pos)`  
 
+```
  2. enable要使用的中斷
  3. 設定中斷的priority
