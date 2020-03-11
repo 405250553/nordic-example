@@ -5,6 +5,7 @@
 ## step
  
 **1. 對要使用的interrupt初始化**
+以下程式寫法請參考nrf52832 datasheet 中 register對應bit的定義
 ```
     NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos) //設定觸發條件是上升沿、下降沿或者任何變化  
                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos) //設定相對應的中斷輸入pin腳
@@ -12,7 +13,6 @@
                             
     NRF_GPIOTE->INTENSET = GPIOTE_INTENSET_IN0_Set << GPIOTE_INTENSET_IN0_Pos //enable相對應的INTENSET register
 ```  
-上述程式寫法請參考nrf52832 datasheet 中 register對應bit的定義
 
  可在nrf52.h中找到gpiote定義結構如下
 ```
