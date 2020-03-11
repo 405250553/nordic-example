@@ -12,8 +12,9 @@ NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_P
                             
 NRF_GPIOTE->INTENSET = GPIOTE_INTENSET_IN0_Set << GPIOTE_INTENSET_IN0_Pos 
 ```  
-NRF_GPIOTE->CONFIG //gpiote的channel，nrf52832有8個  
-NRF_GPIOTE->INTENSET //enable interrupt  
-
  2. enable要使用的INTERRUPT
+ ```
+     NVIC_SetPriority(GPIOTE_IRQn,7);
+ ```
+ 
  3. 設定中斷的priority
