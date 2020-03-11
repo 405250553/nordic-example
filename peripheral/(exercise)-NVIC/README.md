@@ -4,7 +4,7 @@
 
 ## step
  
-<font size=7>**1. 對要使用的interrupt初始化**</font>
+**1. 對要使用的interrupt初始化**
 ```
     NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos) //設定觸發條件是上升沿、下降沿或者任何變化  
                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos) //設定相對應的中斷輸入pin腳
@@ -37,4 +37,15 @@ typedef struct
   __OM  uint32_t STIR;                   /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Register */
 }  NVIC_Type;
 ```
+ISER[1]：中斷使能寄存器。由前邊可以看到，nRF51的寄存器編號為0-25，在這裡ISER[1]為32位寄存器，總共可以表示32個中斷，bit0-bit25分別對應中斷0-25（其實後來發現在NVIC_EnableIRQ()函數中是將1左移IRQn位之後又與0x1F，也就是空出了低五位，所以在這裡應該是對應的高地址，而把低位給空出來的）。要使能某個中斷，必須設置相應的ISER位為1，使該中斷被使能（這裡僅僅是使能，還要配合中斷分組、屏蔽、I/O口映射等設置才算是一個完整的中斷設置）。
+
+ICER[1]：中斷除能寄存器，和ISER的作用恰好相反，用來清除某個中斷的使能的。專門設置一個ICER來清除中斷位，而不是向ISER寫0來清除，這是因為NVIC的這些寄存器都是寫1有效的，寫0無效的。
+
+ISPR[1]：中斷掛起控制寄存器。通過置1可以將正在進行的中斷掛起，而執行同級或者更高級別的中斷。
+
+ICPR[1]：中斷解掛控制寄存器。通過置1可以將掛起的中斷解掛。
+
+IP[8]：中斷優先級控制寄存器組。這個寄存器組相當重要。中斷分組與這個寄存器密切相關。
+
+
  **3. enable要使用的interrupt**
