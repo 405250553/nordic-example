@@ -12,6 +12,8 @@
                             
     NRF_GPIOTE->INTENSET = GPIOTE_INTENSET_IN0_Set << GPIOTE_INTENSET_IN0_Pos //enable相對應的INTENSET register
 ```  
+上述程式寫法請參考nrf52832 datasheet 中 register對應bit的定義
+
  可在nrf52.h中找到gpiote定義結構如下
 ```
 typedef struct {                                /*!< (@ 0x40006000) GPIOTE Structure                                           */
