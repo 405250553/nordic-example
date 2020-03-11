@@ -42,7 +42,7 @@ typedef struct {                                /*!< (@ 0x40006000) GPIOTE Struc
 } NRF_GPIOTE_Type;                              /*!< Size = 1328 (0x530)  
 ```
 
- **2. 設定中斷的priorityenable要使用的interrupt**
+ **2. 設定要使用的中斷的priority**
  ```
      NVIC_SetPriority(GPIOTE_IRQn,7)
  ```
