@@ -4,7 +4,7 @@
 
 ## step
  
-<font size=5>**1. 對要使用的interrupt初始化**</font>
+<font size=7>**1. 對要使用的interrupt初始化**</font>
 ```
     NRF_GPIOTE->CONFIG[0] = (GPIOTE_CONFIG_POLARITY_HiToLo<<GPIOTE_CONFIG_POLARITY_Pos) //設定觸發條件是上升沿、下降沿或者任何變化  
                            |(BSP_BUTTON_0 << GPIOTE_CONFIG_PSEL_Pos) //設定相對應的中斷輸入pin腳
