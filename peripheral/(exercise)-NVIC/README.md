@@ -77,6 +77,6 @@ ICPR[1]：中斷解掛控制寄存器。通過置1可以將掛起的中斷解掛
 
 IP[8]：中斷優先級控制寄存器組。這個寄存器組相當重要。中斷分組與這個寄存器密切相關。
 
-<font color = yellow>NVIC_SetPriority() 便是改register IP的值</font>
+<span style="color:red;"> NVIC_SetPriority() 便是改register IP的值 </span>
 
  **3. enable要使用的interrupt**
